@@ -33,7 +33,7 @@ def predict() :
 	input = np.array(tweet_to_tensor(feature[0], unknown, word2ind))
 
 	# Classification using model
-	model(input)
+	pred = model(input)
 	return render_template('index.html', prediction_text= 'Tweet \"{}\" concerns a {} event with a probability of {}%'.format(feature[0], bool(pred), round(prob*100,2)))
 
 if __name__ == "__main__" : 
